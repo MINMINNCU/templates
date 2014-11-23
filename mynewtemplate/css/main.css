@@ -124,6 +124,7 @@ li.ditem.shown{
 }
 
 /*center*/
+
 #centerBlock{
 	text-align: center;
 	position: fixed;
@@ -139,22 +140,26 @@ li.ditem.shown{
 	position: relative;
 	top:-100px;
 }
-.searchBtn{
+
+#searchBtn{
 	position: relative;
 	top:100px;
 	width: 80%;
 	left:20px;
+	z-index: 1;
+	
 }
+#k2SearchBlock{
+	display: none;
+}
+
 #centerPost{
 	position: relative;
 	top:-300px;
 	width:80%;
 	left:20px;
 }
-.k2SearchBlock{
-	display: none;
 
-}
 .homeImg>img{
 	width:60%;
 }

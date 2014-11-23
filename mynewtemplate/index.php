@@ -72,13 +72,13 @@
 		
 			<div id="centerBlock">
 				<!-- search -->
-				<div class='searchblock'>
+				<div id='k2SearchBlock'>
 					<jdoc:include type="modules" name="search"/>
 				</div>
-				<img class='centerBtn searchBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/search-01.png' alt='search'/>
+				<img id='searchBtn' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/search-01.png' alt='search'/>
 				<!-- home   -->
-				<a href='/minmin'><img class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/DtLogo-01.png' alt='home'/>
-				</a>
+				<img class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/DtLogo-01.png' alt='home'/>
+				
 				<!-- <jdoc:include type="modules" name="center"/> -->
 				<!-- post -->
 				<?php $user = JFactory::getUser();?>
