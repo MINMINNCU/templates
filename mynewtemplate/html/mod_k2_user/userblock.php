@@ -46,7 +46,7 @@ defined('_JEXEC') or die;
 					$rows = $fbdb->loadObjectList();
 					$fbuserid = (strlen($rows[0]->facebook_userid)>0)?$rows[0]->facebook_userid:0;
 
-   					$image = "/minmin/templates/mynewtemplate/images/fbphoto.jpg" ;	
+   					$image = "/minmin/templates/mynewtemplate/images/level2.png" ;	
 	  			  }
 	  		?>
 
