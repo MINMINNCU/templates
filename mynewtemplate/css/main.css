@@ -20,6 +20,12 @@ div.itemAuthorBlock{
 /*disable scroll of the pagr which under the overlayer*/
 	overflow:hidden;
 }
+
+#cboxLoadedContent{
+	overflow: hidden !important;
+}
+
+
 #colorbox{
 	z-index: 5;
 	
