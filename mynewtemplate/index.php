@@ -27,14 +27,6 @@
 		<!-- main -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
 
-		<!-- slidingmenu -->
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
-		
-
-		<!-- step-by-step tour -->
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/hopscotch.css" type="text/css" />	
-		
 
 		<!-- bower_components -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/jquery.js" ></script> 
@@ -54,8 +46,6 @@
 
 		<!-- JS Plugins -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
-		<!-- 
-		 -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/AnimOnScroll.js" ></script> 
 		
 		<!-- slidingmenu -->
