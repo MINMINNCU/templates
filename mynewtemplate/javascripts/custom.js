@@ -2,6 +2,8 @@ var $K2 = jQuery.noConflict();
       
     $K2( document ).ready(function() {
       "use strict";
+
+
       $K2(this).find('.introtext').hide();
       $K2(this).find('.tagbox').hide();
       $K2(this).find('.comments').hide();
@@ -10,7 +12,7 @@ var $K2 = jQuery.noConflict();
 
       $K2(document).on('click', '#searchBtn', function() {
         $K2(document).find('#k2SearchBlock').slideToggle();
-      });  
+      });
 
       $K2('.ditem').mouseenter(function(){
         $K2(this).find('.tagbox').show();

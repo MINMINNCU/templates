@@ -15,10 +15,27 @@
 	   	<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/css/slidingmenu/slidingmenu.css" type="text/css" />
 	    <link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/css/slidingmenu/main.css" type="text/css">
 
+		<!-- JS Plugins -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/masonry.pkgd.min.js" ></script> 
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/AnimOnScroll.js" ></script> 
+
 	   	<!-- gridloading -->
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/component.css" type="text/css" />	
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/default.css" type="text/css" />	
 	
+		<!-- main -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
+
+		<!-- slidingmenu -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
+		
+
+		<!-- step-by-step tour -->
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/hopscotch.css" type="text/css" />	
+		
+
 		<!-- bower_components -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/jquery.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/jquery.bridget.js" ></script> 
@@ -34,6 +51,7 @@
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/outlayer.js" ></script>
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/masonry-docs.js" ></script>
 		
+
 		<!-- JS Plugins -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
 		<!-- 
@@ -43,17 +61,20 @@
 		<!-- slidingmenu -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
+		
 		<!-- main -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
-	
-	<style type="text/css"> body{font-family:"Microsoft JhengHei";}</style>
-	
+		
+		<!-- step-by-step tour -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/hopscotch.js" ></script>
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/my_first_tour.js" ></script>
+		
+		<style type="text/css"> body{font-family:"Microsoft JhengHei";}</style>
+
 	</head>
 	<body>
-
 		
-
-		
+	
 		<?php if ($this->countModules('sidebar-menu')) : ?>
 		<nav class="sidebarmenu" id="sm">
 			<!--slidingmenu-->
@@ -68,18 +89,18 @@
 		<!-- Master Wrap : starts -->
 		<section id="mastwrap" class="sliding">
 
+			
 			<jdoc:include type="message" />
 			<!-- display demand -->
 			<jdoc:include type="component" />
-		
-			
 		</section>
 		<!-- Master Wrap : ends -->	
 		
 		<jdoc:include type="modules" name="top" /> 
 		<jdoc:include type="modules" name="right"/> 
-			
-	
+
+		<!-- define and start your tour in this file -->
+
 	</body>
 </html>
 

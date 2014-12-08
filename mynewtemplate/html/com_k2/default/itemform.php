@@ -38,7 +38,7 @@ $document->addScriptDeclaration("
 
 <form action="<?php echo JURI::root(true); ?>/index.php" enctype="multipart/form-data" method="post" name="adminForm" id="adminForm">
 	<?php if($this->mainframe->isSite()): ?>
-	<div id="k2FrontendContainer">
+	<div id="k2FrontendContainer" style="font-family:Microsoft JhengHei; width: 700px; margin: 0px auto; background: #FFF;">
 		<div id="k2Frontend">
 			
 			<?php endif; ?>
@@ -50,11 +50,11 @@ $document->addScriptDeclaration("
 							<table class="adminFormK2">
 								<!-- title -->
 								<tr>
-									<td class="adminK2LeftCol">
-										<label for="title"><?php echo JText::_('標題'); ?></label>
+									<td class="adminK2LeftCol" style="background: #FFF; padding-right:8px; padding-left: 93px;">
+										<label for="title"><?php echo JText::_('需求名稱'); ?></label>
 									</td>
 									<td class="adminK2RightCol">
-										<input class="text_area k2TitleBox" type="text" name="title" id="title" maxlength="250" value="<?php echo $this->row->title; ?>" />
+										<input class="text_area k2TitleBox" style="width: 301px; height:26px; margin-left:2px;" type="text" name="title" id="title" maxlength="250" value="<?php echo $this->row->title; ?>" />
 									</td>
 								</tr>
 								<!-- title url -->
@@ -63,7 +63,7 @@ $document->addScriptDeclaration("
 										<label for="alias"><?php echo JText::_('K2_TITLE_ALIAS'); ?></label>
 									</td>
 									<td class="adminK2RightCol">
-										<input class="text_area k2TitleAliasBox" type="text" name="alias" id="alias" maxlength="250" value="<?php echo $this->row->alias; ?>" />
+										<input class="text_area k2TitleAliasBox" style="width: 450px;" type="text" name="alias" id="alias" maxlength="250" value="<?php echo $this->row->alias; ?>" />
 									</td>
 								</tr>
 								<!-- category -->
@@ -77,19 +77,19 @@ $document->addScriptDeclaration("
 								</tr>
 								<!-- tag -->
 								<tr>
-									<td class="adminK2LeftCol">
-										<label><?php echo JText::_('TAG'); ?></label>
+									<td class="adminK2LeftCol" style="background: #FFF; padding-right:8px; padding-left: 93px;">
+										<label><?php echo JText::_('標籤TAG'); ?></label>
 									</td>
 									<td class="adminK2RightCol">
 										<?php if($this->params->get('taggingSystem')): ?>
 										<!-- Free tagging -->
-										<ul class="tags">
+										<ul class="tags" style="width:301px; margin-left:2px; padding-top:1px; padding-bottom:1px;">
 											<?php if(isset($this->row->tags) && count($this->row->tags)): ?>
 											<?php foreach($this->row->tags as $tag): ?>
 											<li class="tagAdded">
 												<?php echo $tag->name; ?>
 												<span title="<?php echo JText::_('K2_CLICK_TO_REMOVE_TAG'); ?>" class="tagRemove">x</span>
-												<input type="hidden" name="tags[]" value="<?php echo $tag->name; ?>" />
+												<input style="height:20px; padding-top:1px; padding-bottom:1px;" type="hidden" name="tags[]" value="<?php echo $tag->name; ?>" />
 											</li>
 											<?php endforeach; ?>
 											<?php endif; ?>
@@ -98,7 +98,7 @@ $document->addScriptDeclaration("
 											</li>
 											<li class="clr"></li>
 										</ul>
-										<span class="k2Note"> <?php echo JText::_('按ENTER鍵即可建立TAG'); ?> </span>
+										<span class="k2Note" style="margin-left:3px;"> <?php echo JText::_('按ENTER鍵即可建立標籤TAG'); ?> </span>
 										<?php else: ?>
 										<!-- Selection based tagging -->
 										<?php if( !$this->params->get('lockTags') || $this->user->gid>23): ?>
@@ -147,11 +147,11 @@ $document->addScriptDeclaration("
 							<!-- image upload -->
 							<table class="admintable">
 								<tr>
-									<td align="right" class="key">
-										<?php echo JText::_('上傳圖片'); ?>
+									<td align="right" class="key" style=" background: #FFF; border-bottom:0px; border-right:0px; padding-left:50px; padding-right:8px;">
+										<?php echo JText::_('圖片上傳'); ?>
 									</td>
 									<td>
-										<input type="file" name="image" class="fileUpload" />
+										<input type="file" name="image" class="fileUpload" style="width: 301px; height:26px; padding-top:2px; padding-bottom:0px"/>
 										<i>(<?php echo JText::_('K2_MAX_UPLOAD_SIZE'); ?>: <?php echo ini_get('upload_max_filesize'); ?>)</i>
 										<br />
 										<br />
@@ -174,7 +174,7 @@ $document->addScriptDeclaration("
 								<?php endif; ?>
 							</table>
 							<?php if (count($this->K2PluginsItemImage)): ?>
-							<div class="itemPlugins">
+							<div class="itemPlugins" >
 								<?php foreach($this->K2PluginsItemImage as $K2Plugin): ?>
 								<?php if(!is_null($K2Plugin)): ?>
 								<fieldset>
@@ -196,11 +196,11 @@ $document->addScriptDeclaration("
 											</tr>												
 											<?php else: ?>
 											<tr>
-												<td align="right" class="key">
-													<label for="K2ExtraField_<?php echo $extraField->id; ?>"><?php echo $extraField->name; ?></label>
+												<td align="right" class="key" style="background: #FFF; border-bottom:0px; border-right:0px; padding-left:50px; padding-right:8px;">
+													<label for="K2ExtraField_<?php echo $extraField->id;?>"><?php echo $extraField->name; ?></label>
 												</td>
 												<td>
-													<?php echo $extraField->element; ?>
+													<?php echo $extraField->element; ?> 
 												</td>
 											</tr>
 											<?php endif; ?>
@@ -288,4 +288,7 @@ $document->addScriptDeclaration("
 <script type="text/javascript" >
 //disable alert
 alert = function() {};
-</script>>
+//extrafield dynamic gererate and sould use js control its css
+document.getElementById('K2ExtraField_1').style.width='300px';
+document.getElementById('K2ExtraField_1').style.height='26px';
+</script>
