@@ -6,7 +6,6 @@
 		<jdoc:include type="head" />
 		
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/main.css" type="text/css" />
-
 		
     	<!-- Custom Fonts Setup via Font-face CSS3 -->
     	<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/fonts/fonts.css" type="text/css">
@@ -20,21 +19,16 @@
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/masonry.pkgd.min.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/AnimOnScroll.js" ></script> 
 
-	   	<!-- gridloading -->
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/component.css" type="text/css" />	
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/default.css" type="text/css" />	
-	
 		<!-- main -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
 
 		<!-- slidingmenu -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
-		
 
-		<!-- step-by-step tour -->
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/hopscotch.css" type="text/css" />	
-		
+	   	<!-- gridloading -->
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/component.css" type="text/css" />	
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/default.css" type="text/css" />	
 
 		<!-- bower_components -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/jquery.js" ></script> 
@@ -49,24 +43,10 @@
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/matches-selector.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/get-size.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/outlayer.js" ></script>
-		
 
-		<!-- JS Plugins -->
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/masonry.pkgd.min.js" ></script> 
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/AnimOnScroll.js" ></script> 
-		
-		<!-- slidingmenu -->
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
-		
-		<!-- main -->
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
-		
 		<!-- step-by-step tour -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/hopscotch.js" ></script>
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/my_first_tour.js" ></script>
-		
 		<style type="text/css"> body{font-family:"Microsoft JhengHei";}</style>
 
 	</head>
@@ -109,15 +89,15 @@
 				<?php $user = JFactory::getUser();?>
 				<?php if($user->guest):?>
 				
-
 				<img id='centerPost' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/post-01.png' alt='post'/>
+
 				<script language="javascript">
 					var $K2 = jQuery.noConflict();
 					$K2(document).ready(function(){
 					  "use strict";
 					  
 					 $K2(document).on('click', '#centerPost', function() {
-					 		$K2('#sm-trigger').toggleClass('active');
+					 	$K2('#sm-trigger').toggleClass('active');
 					    $K2('#sm-trigger').toggleClass('arrow-close');
 					    $K2('#sm-trigger').toggleClass('arrow-open');
 					    $K2('#mastwrap').toggleClass('sliding-toright');
@@ -133,8 +113,6 @@
 				{/modal}
 				<?php endif; ?>	
 			</div>
-		
-
 
 		</section>
 		<!-- Master Wrap : ends -->	
