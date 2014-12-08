@@ -137,7 +137,12 @@ li.ditem.shown{
     margin-right: 5px;
 }
 
+<<<<<<< HEAD
 /* Main Page Center */
+=======
+/*center*/
+
+>>>>>>> 7f5e60656f81e5f8d16e731ad9fab75fce6c063d
 #centerBlock{
 	text-align: center;
 	position: fixed;
@@ -153,22 +158,26 @@ li.ditem.shown{
 	position: relative;
 	top:-100px;
 }
-.searchBtn{
+
+#searchBtn{
 	position: relative;
 	top:100px;
 	width: 80%;
 	left:20px;
+	z-index: 1;
+	
 }
+#k2SearchBlock{
+	display: none;
+}
+
 #centerPost{
 	position: relative;
 	top:-300px;
 	width:80%;
 	left:20px;
 }
-.k2SearchBlock{
-	display: none;
 
-}
 .homeImg>img{
 	width:60%;
 }

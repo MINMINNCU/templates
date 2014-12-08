@@ -288,4 +288,7 @@ $document->addScriptDeclaration("
 <script type="text/javascript" >
 //disable alert
 alert = function() {};
+//extrafield dynamic gererate and sould use js control its css
+document.getElementById('K2ExtraField_1').style.width='300px';
+document.getElementById('K2ExtraField_1').style.height='26px';
 </script>

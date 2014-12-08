@@ -6,6 +6,7 @@
 		<jdoc:include type="head" />
 		
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/main.css" type="text/css" />
+
 		
     	<!-- Custom Fonts Setup via Font-face CSS3 -->
     	<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/fonts/fonts.css" type="text/css">
@@ -30,7 +31,12 @@
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
 		
-		<!-- bower components -->
+
+		<!-- step-by-step tour -->
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/hopscotch.css" type="text/css" />	
+		
+
+		<!-- bower_components -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/jquery.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/jquery.bridget.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/eventie.js" ></script> 
@@ -44,14 +50,29 @@
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/get-size.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/outlayer.js" ></script>
 		
-	<style type="text/css"> body{font-family:"Microsoft JhengHei";}</style>
-	
+
+		<!-- JS Plugins -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/masonry.pkgd.min.js" ></script> 
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/AnimOnScroll.js" ></script> 
+		
+		<!-- slidingmenu -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
+		
+		<!-- main -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
+		
+		<!-- step-by-step tour -->
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/hopscotch.js" ></script>
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/my_first_tour.js" ></script>
+		
+		<style type="text/css"> body{font-family:"Microsoft JhengHei";}</style>
+
 	</head>
 	<body>
-
 		
-
-		
+	
 		<?php if ($this->countModules('sidebar-menu')) : ?>
 		<nav class="sidebarmenu" id="sm">
 			<!--slidingmenu-->
@@ -66,23 +87,29 @@
 		<!-- Master Wrap : starts -->
 		<section id="mastwrap" class="sliding">
 
+			
 			<jdoc:include type="message" />
 			<!-- display demand -->
 			<jdoc:include type="component" />
 		
+			
+
 			<div id="centerBlock">
 				<!-- search -->
-				<div class='searchblock'>
+				<div id='k2SearchBlock'>
 					<jdoc:include type="modules" name="search"/>
 				</div>
-				<img class='centerBtn searchBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/search-01.png' alt='search'/>
+				<img id='searchBtn' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/search-01.png' alt='search'/>
 				<!-- home   -->
-				<a href='/minmin'><img class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/DtLogo-01.png' alt='home'/>
+				<a href="/minmin">
+				<img id='homeBtn' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/DtLogo-01.png' alt='home'/>
 				</a>
 				<!-- <jdoc:include type="modules" name="center"/> -->
 				<!-- post -->
 				<?php $user = JFactory::getUser();?>
 				<?php if($user->guest):?>
+				
+
 				<img id='centerPost' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/post-01.png' alt='post'/>
 				<script language="javascript">
 					var $K2 = jQuery.noConflict();
@@ -90,7 +117,7 @@
 					  "use strict";
 					  
 					 $K2(document).on('click', '#centerPost', function() {
-					 	$K2('#sm-trigger').toggleClass('active');
+					 		$K2('#sm-trigger').toggleClass('active');
 					    $K2('#sm-trigger').toggleClass('arrow-close');
 					    $K2('#sm-trigger').toggleClass('arrow-open');
 					    $K2('#mastwrap').toggleClass('sliding-toright');
@@ -98,21 +125,25 @@
 					    $K2('#sm').toggleClass('menu-open');
 					    $K2('#mastwrap').addClass('nav-opened');
 						});
-					   });
+					});
 				</script>
 				<?php else: ?>
 				{modal index.php/post-demand}
-				<img id='centerPost' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/post-01.png' alt='post'/>
+					<img id='centerPost' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/post-01.png' alt='post'/>				
 				{/modal}
 				<?php endif; ?>	
 			</div>
+		
+
+
 		</section>
 		<!-- Master Wrap : ends -->	
 		
 		<jdoc:include type="modules" name="top" /> 
 		<jdoc:include type="modules" name="right"/> 
-			
-	
+
+		<!-- define and start your tour in this file -->
+
 	</body>
 </html>
 
