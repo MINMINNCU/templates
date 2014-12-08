@@ -559,6 +559,8 @@ defined('_JEXEC') or die;
 
   </div>
   <?php endif; ?>
+  <!-- Plugins: AfterDisplay -->
+  <?php echo $this->item->event->AfterDisplay; ?>
 
  
 

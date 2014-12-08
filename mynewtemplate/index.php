@@ -1,7 +1,7 @@
 <?php defined( '_JEXEC' ) or die( 'Restricted access' );?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
-   xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
+   xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>">
 	<head>
 		<jdoc:include type="head" />
 		
@@ -49,11 +49,13 @@
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/matches-selector.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/get-size.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/outlayer.js" ></script>
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/masonry-docs.js" ></script>
 		
 
 		<!-- JS Plugins -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/masonry.pkgd.min.js" ></script> 
+		<!-- 
+		 -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/AnimOnScroll.js" ></script> 
 		
 		<!-- slidingmenu -->
@@ -91,51 +93,6 @@
 			<jdoc:include type="message" />
 			<!-- display demand -->
 			<jdoc:include type="component" />
-		
-			
-
-			<div id="centerBlock">
-				<!-- search -->
-				<div id='k2SearchBlock'>
-					<jdoc:include type="modules" name="search"/>
-				</div>
-				<img id='searchBtn' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/search-01.png' alt='search'/>
-				<!-- home   -->
-				<a href="/minmin">
-				<img id='homeBtn' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/DtLogo-01.png' alt='home'/>
-				</a>
-				<!-- <jdoc:include type="modules" name="center"/> -->
-				<!-- post -->
-				<?php $user = JFactory::getUser();?>
-				<?php if($user->guest):?>
-				
-
-				<img id='centerPost' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/post-01.png' alt='post'/>
-				<script language="javascript">
-					var $K2 = jQuery.noConflict();
-					$K2(document).ready(function(){
-					  "use strict";
-					  
-					 $K2(document).on('click', '#centerPost', function() {
-					 		$K2('#sm-trigger').toggleClass('active');
-					    $K2('#sm-trigger').toggleClass('arrow-close');
-					    $K2('#sm-trigger').toggleClass('arrow-open');
-					    $K2('#mastwrap').toggleClass('sliding-toright');
-					    $K2('#mastwrap').toggleClass('mastwrap-open');
-					    $K2('#sm').toggleClass('menu-open');
-					    $K2('#mastwrap').addClass('nav-opened');
-						});
-					});
-				</script>
-				<?php else: ?>
-				{modal index.php/post-demand}
-					<img id='centerPost' class='centerBtn' src='<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>images/post-01.png' alt='post'/>				
-				{/modal}
-				<?php endif; ?>	
-			</div>
-		
-
-
 		</section>
 		<!-- Master Wrap : ends -->	
 		
