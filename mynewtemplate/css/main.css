@@ -144,7 +144,6 @@ iframe.cboxIframe{
 #centerBlock{
 	text-align: center;
 	position: fixed;
-	top:10%;
 	left:40%;
 	width:18%;
 	z-index: 3;
@@ -155,16 +154,12 @@ iframe.cboxIframe{
 	display:block;
 	width:100%;
 	position: relative;
-	top:-100px;
 }
 
 #searchBtn{
-	position: relative;
-	top:100px;
-	width: 80%;
-	left:20px;
 	z-index: 1;
-	
+	width: 80%;
+	position: relative;
 }
 #k2SearchBlock{
 	display: none;
@@ -172,9 +167,7 @@ iframe.cboxIframe{
 
 #centerPost{
 	position: relative;
-	top:-300px;
 	width:80%;
-	left:20px;
 }
 
 .homeImg>img{
