@@ -30,28 +30,38 @@ defined('_JEXEC') or die;
 	<!-- K2 Plugins: K2BeforeDisplay -->
 	<?php echo $this->item->event->K2BeforeDisplay; ?>
 
-	<div class="itemHeader">
+	<div class="levelImg" style="float: left; margin-right: 15px;">
 
-		<?php if($this->item->params->get('itemDateCreated')): ?>
-		<!-- Date created -->
-		<span class="itemDateCreated">
-			<?php echo JHTML::_('date', $this->item->created , JText::_('K2_DATE_FORMAT_LC2')); ?>
-		</span>
-		<?php endif; ?>
+	  	<?php if($this->item->params->get('itemAuthorImage') && !empty($this->item->author->avatar)): ?>
+	  	<img class="itemAuthorAvatar" src="<?php echo $this->item->author->avatar; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($this->item->author->name); ?>" />
+	  	<?php endif; ?>
 
-	  <?php if($this->item->params->get('itemTitle')): ?>
-	  <!-- Item title -->
-	  <h2 class="itemTitle">
+	</div>
+	
+	<div class="itemHeader" >
+
+		<?php if($this->item->params->get('itemTitle')): ?>
+		<!-- Item title -->
+		<h2 class="itemTitle" style="float: none;">
 			<?php if(isset($this->item->editLink)): ?>
 			<!-- Item edit link -->
-			<span class="itemEditLink">
+			<span class="itemEditLink" style="display:none;">
 				<a class="modal" rel="{handler:'iframe',size:{x:990,y:550}}" href="<?php echo $this->item->editLink; ?>">
 					<?php echo JText::_('K2_EDIT_ITEM'); ?>
 				</a>
 			</span>
 			<?php endif; ?>
 
-	  	<?php echo $this->item->title; ?>
+		  	<p style="margin-top: 10px; margin-bottom: 0px; height: 25px;"><?php echo $this->item->title; ?></p>
+
+
+		<?php if($this->item->params->get('itemDateCreated')): ?>
+		<!-- Date created -->
+		<span class="itemDateCreated" style="margin-left: 5px;">
+			<?php echo "▌ " . JHTML::_('date', $this->item->created , JText::_('K2_DATE_FORMAT_LC2')); ?>
+		</span>
+		<?php endif; ?>
+
 
 	  	<?php if($this->item->params->get('itemFeaturedNotice') && $this->item->featured): ?>
 	  	<!-- Featured flag -->
@@ -239,7 +249,7 @@ defined('_JEXEC') or die;
 	  <?php endif; ?>
 	  <?php if($this->item->params->get('itemFullText')): ?>
 	  <!-- Item fulltext -->
-	  <div class="itemFullText">
+	  <div class="itemFullText" style="text-align: center;">
 	  	<?php echo $this->item->fulltext; ?>
 	  </div>
 	  <?php endif; ?>
@@ -381,7 +391,7 @@ defined('_JEXEC') or die;
 
   <?php if($this->item->params->get('itemAuthorBlock') && empty($this->item->created_by_alias)): ?>
   <!-- Author Block -->
-  <div class="itemAuthorBlock">
+  <div class="itemAuthorBlock" style="display: none;">
 
   	<?php if($this->item->params->get('itemAuthorImage') && !empty($this->item->author->avatar)): ?>
   	<img class="itemAuthorAvatar" src="<?php echo $this->item->author->avatar; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($this->item->author->name); ?>" />
@@ -389,7 +399,7 @@ defined('_JEXEC') or die;
 
     <div class="itemAuthorDetails">
       <h3 class="itemAuthorName">
-      	<a rel="author" href="<?php echo $this->item->author->link; ?>"><?php echo $this->item->author->name; ?></a>
+      	<a rel="author" href="<?php echo $this->item->author->link; ?>" style="display: none;"><?php echo $this->item->author->name; ?></a>
       </h3>
 
       <?php if($this->item->params->get('itemAuthorDescription') && !empty($this->item->author->profile->description)): ?>
@@ -550,18 +560,62 @@ defined('_JEXEC') or die;
   </div>
   <?php endif; ?>
 
-  <!-- Plugins: AfterDisplay -->
-  <?php echo $this->item->event->AfterDisplay; ?>
+ 
 
-  <!-- K2 Plugins: K2AfterDisplay -->
-  <?php echo $this->item->event->K2AfterDisplay; ?>
+<div class="tabs">
+    <ul class="tab-links" style="padding-left: 0px; margin-bottom: 0px;">
+        <li class="active tabCtoQ" style="margin: 0px;"><a>〈留 言〉</a></li>
+        <li class="tabQtoC"><a>〈報 價〉</a></li>        
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+             <!-- Plugins: AfterDisplay -->
+			  <?php echo $this->item->event->AfterDisplay; ?>
 
-  <?php if($this->item->params->get('itemComments') && ( ($this->item->params->get('comments') == '2' && !$this->user->guest) || ($this->item->params->get('comments') == '1'))): ?>
-  <!-- K2 Plugins: K2CommentsBlock -->
-  <?php echo $this->item->event->K2CommentsBlock; ?>
-  <?php endif; ?>
+			  <!-- K2 Plugins: K2AfterDisplay -->
+			  <?php echo $this->item->event->K2AfterDisplay; ?>
 
-  {module Quotation}
+			  <?php if($this->item->params->get('itemComments') && ( ($this->item->params->get('comments') == '2' && !$this->user->guest) || ($this->item->params->get('comments') == '1'))): ?>
+			  <!-- K2 Plugins: K2CommentsBlock -->
+			  <?php echo $this->item->event->K2CommentsBlock; ?>
+			  <?php endif; ?>
+  		</div>
+ 
+        <div id="tab2" class="tab">
+        	{module Quotation}
+        </div>
+    </div>
+</div>
+
+<script language="javascript">
+
+	var $TabCQ = jQuery.noConflict();
+	$TabCQ(document).ready(function(){
+	  "use strict";
+
+	    $TabCQ('.tabCtoQ').on('click', function(e)  {
+
+			// Show/Hide Tabs		
+			$TabCQ('#tab1').fadeIn(1000).siblings().hide();
+	        // Change/remove current tab to active
+	        $TabCQ(this).parent('li').addClass('active').siblings().removeClass('active');
+	        e.preventDefault();
+	    });
+
+
+	    $TabCQ('.tabQtoC').on('click', function(e)  {
+
+			// Show/Hide Tabs		
+			$TabCQ('#tab2').fadeIn(1000).siblings().hide();
+	        // Change/remove current tab to active
+	        $TabCQ(this).parent('li').addClass('active').siblings().removeClass('active');
+	        e.preventDefault();
+	    });
+
+	});
+
+</script>
 
  <?php if($this->item->params->get('itemComments') && ($this->item->params->get('comments') == '1' || ($this->item->params->get('comments') == '2')) && empty($this->item->event->K2CommentsBlock)): ?>
   <!-- Item comments -->
@@ -638,6 +692,12 @@ defined('_JEXEC') or die;
 	    </li>
 	    <?php endforeach; ?>
 	  </ul>
+
+	  <ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
 
 	  <div class="itemCommentsPagination">
 	  	<?php echo $this->pagination->getPagesLinks(); ?>

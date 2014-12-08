@@ -199,7 +199,7 @@ $document->addScriptDeclaration("
 												<td align="right" class="key" style="background: #FFF; border-bottom:0px; border-right:0px; padding-left:50px; padding-right:8px;">
 													<label for="K2ExtraField_<?php echo $extraField->id;?>"><?php echo $extraField->name; ?></label>
 												</td>
-												<td style="width:301px; height:26px;">
+												<td>
 													<?php echo $extraField->element; ?> 
 												</td>
 											</tr>

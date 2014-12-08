@@ -87,7 +87,6 @@ li.ditem.shown{
 	z-index: 2;
 	min-width:25%;
 	max-width: 50%;
-	width: auto;
 }
 
 .mainitem,.comments {   
@@ -118,18 +117,27 @@ li.ditem.shown{
 	display: inline;	
 }
 
-#quo{
-	margin-top: 3px;
-    margin-right: 10px;
+#itemNameDetails{
+	display: none;
 }
+
+
+/* Main Page Quotation */
 
 .numOfComments{
-	margin-top: 5px;
-	margin-left: 160px;
+	margin-top: 3px;
+	margin-left: 0px;
 	text-align: left;
+	font-size: 5px;
+	font-style: "Times New Roman";
+}
+#quo{
+	margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 5px;
 }
 
-/*center*/
+/* Main Page Center */
 #centerBlock{
 	text-align: center;
 	position: fixed;
@@ -271,9 +279,11 @@ position:relative;
 top:1px;
 }
 
-.itemFullText{
-text-align: center;
-}
+div.itemFullText {text-align: center;}
+	div.itemFullText h3 {text-align: center; margin:0;padding:16px 0 4px 0;}
+	div.itemFullText p {}
+	div.itemFullText img {}
+
 
 .itemHits{
 float: right;
@@ -291,8 +301,93 @@ display: none;
 }
 
 .k2FrontendToolbar{
-	float: left;
+float: left;
+}
+/*po需求 URL textline*/
+#k2Frontend table tbody tr td div#extraFieldsContainer #extraFields tbody tr td input#K2ExtraField_1{
+width:301px !important;
+line-height:26px !important;
+}
+body.contentpane input,
+body.component-body input,
+body.contentpane select,
+body.component-body select {
+width:301px !important;
+line-height:26px !important; }
+
+body.contentpane input,
+body.component-body input,
+body.contentpane select,
+body.component-body select {border:1px solid #ccc; width:300px;
 }
 
 
+/*tabcss*/
+.tabs {
+    width:100%;
+    display:inline-block;
+}
 
+ul.tab-links{
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#fff;
+        color:#4c4c4c;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+/*tabcss*/
+
+/*quotation*/
+#fieldset1{
+	border: 0px;
+}
+
+/*quotation*/
