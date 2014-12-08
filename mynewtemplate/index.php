@@ -14,6 +14,10 @@
 	    <!-- CSS files for plugins -->
 	   	<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/css/slidingmenu/slidingmenu.css" type="text/css" />
 	    <link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/css/slidingmenu/main.css" type="text/css">
+		
+		<!-- step-by-step tour CSS-->
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/hopscotch.css" type="text/css" />	
+		
 
 		<!-- JS Plugins -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
