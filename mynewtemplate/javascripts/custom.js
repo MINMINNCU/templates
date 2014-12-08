@@ -10,11 +10,7 @@ var $K2 = jQuery.noConflict();
 
       $K2(document).on('click', '#searchBtn', function() {
         $K2(document).find('#k2SearchBlock').slideToggle();
-
-      });
-      $K2('.searchBtn').on('click',function(){
-      });
-      
+      });  
 
       $K2('.ditem').mouseenter(function(){
         $K2(this).find('.tagbox').show();

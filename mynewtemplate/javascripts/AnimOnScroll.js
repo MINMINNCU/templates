@@ -95,10 +95,16 @@
 			imagesLoaded( this.el, function() {
 				
 				// initialize masonry
-				new Masonry( self.el, {
+				var msnry = new Masonry( self.el, {
 					itemSelector: 'li',
-					transitionDuration : 0
+					transitionDuration : 0,
 				} );
+				
+
+				//put the centerblock in the center
+				// msnry.stamp( document.querySelector( '#centerBlock' ) );
+			 // 	msnry.layout();
+
 				
 				if( Modernizr.cssanimations ) {
 					// the items already shown...
@@ -110,27 +116,28 @@
 					var interval = 0;
 					var arr = [];
 					//for center space//	
+
 					self.items.forEach( function( el, i ) {
 						if( inViewport( el ) ) {
 							self._checkTotalRendered();
 							classie.add( el, 'shown' );
 						}
 						// set center space for search,logo, and post 
-						left=el.style.left.split('px')[0];
-						left=parseInt(left);
-						if (left>0 && count<=1){
-							arr[count]=left;
-							count++;
-							if (count==2){
-								interval=Math.abs(arr[1]-arr[0]);
-								document.getElementById('centerBlock').style.left=arr[1]*1.1+'px';
-								document.getElementById('centerBlock').style.width=interval*0.9+'px';
-							}
-						}
-						if(count>1 && left>=interval*2){	
-							left+=interval;
-							el.style.left=left+'px';
-						}
+						// left=el.style.left.split('px')[0];
+						// left=parseInt(left);
+						// if (left>0 && count<=1){
+						// 	arr[count]=left;
+						// 	count++;
+						// 	if (count==2){
+						// 		interval=Math.abs(arr[1]-arr[0]);
+						// 		document.getElementById('centerBlock').style.left=arr[1]*1.1+'px';
+						// 		document.getElementById('centerBlock').style.width=interval*0.9+'px';
+						// 	}
+						// }
+						// if(count>1 && left>=interval*2){	
+						// 	left+=interval;
+						// 	el.style.left=left+'px';
+						// }
 						
 						// set center space for search,logo, and post 
 						
@@ -155,6 +162,7 @@
 				this.didScroll = true;
 				setTimeout( function() { self._scrollPage(); }, 60 );
 			}
+
 		},
 		_scrollPage : function() {
 			var self = this;
@@ -179,6 +187,9 @@
 					}, 25 );
 				}
 			});
+			
+
+				
 			this.didScroll = false;
 		},
 		_resizeHandler : function() {
