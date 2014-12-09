@@ -9,11 +9,10 @@ var tour = {
   steps: [
     {
       target: "centerPost",
-      placement: "bottom",
+      placement: "right",
       title: "找不到你很想要的東西或服務嗎？",
       content: "只要輸入標題、標籤、附上圖片，一分鐘內張貼你的需求",
-      xOffset:"100",
-      yOffset:"200",
+      
       zindex:3,
     },
     {

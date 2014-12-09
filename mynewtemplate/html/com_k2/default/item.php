@@ -570,7 +570,7 @@ defined('_JEXEC') or die;
         <li class="tabQtoC"><a>〈報 價〉</a></li>        
     </ul>
  
-    <div class="tab-content">
+    <div class="tab-content" style="overflow: hidden;">
         <div id="tab1" class="tab active">
              <!-- Plugins: AfterDisplay -->
 			  <?php echo $this->item->event->AfterDisplay; ?>
