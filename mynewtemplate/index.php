@@ -6,18 +6,22 @@
 		<jdoc:include type="head" />
 		
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/main.css" type="text/css" />
-
 		
     	<!-- Custom Fonts Setup via Font-face CSS3 -->
     	<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/fonts/fonts.css" type="text/css">
 
-	    <!-- CSS files for plugins -->
+		<!-- step-by-step tour -->
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/hopscotch.css" type="text/css" />	
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/hopscotch.js" ></script>
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/my_first_tour.js" ></script>
+		<style type="text/css"> body{font-family:"Microsoft JhengHei";}</style>
+
+		<!-- slidingmenu -->
 	   	<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/css/slidingmenu/slidingmenu.css" type="text/css" />
 	    <link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/css/slidingmenu/main.css" type="text/css">
-		
-		<!-- step-by-step tour CSS-->
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/hopscotch.css" type="text/css" />	
-		
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
+		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
+
 	   	<!-- gridloading -->
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/component.css" type="text/css" />	
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/default.css" type="text/css" />	
@@ -37,24 +41,13 @@
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/outlayer.js" ></script>
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/masonry-docs.js" ></script>
 		
-
 		<!-- JS Plugins -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/modernizr.custom.js" ></script> 
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/AnimOnScroll.js" ></script> 
 		
-		<!-- slidingmenu -->
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
-		
 		<!-- main -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
 		
-		<!-- step-by-step tour -->
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/hopscotch.js" ></script>
-		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/my_first_tour.js" ></script>
-		
-		<style type="text/css"> body{font-family:"Microsoft JhengHei";}</style>
-
 	</head>
 	<body>
 		
@@ -77,6 +70,7 @@
 			<jdoc:include type="message" />
 			<!-- display demand -->
 			<jdoc:include type="component" />
+
 		</section>
 		<!-- Master Wrap : ends -->	
 		
