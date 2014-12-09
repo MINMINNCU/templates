@@ -1,24 +1,28 @@
 .grid {
-	max-width: 65em;
+	margin: 30px;
 	list-style: none;
-	margin:50px;
 	padding: 0;
 }
-
+.grid2 {
+	margin-left: 20px;
+	
+}
 .grid li {
 	float: left;
 	opacity: 0;
 	padding: 7px;
 	display: inline-block;
 	margin: 0;
-	width: 25%;
+	width: 40%;
 }
+
 
 .grid li.shown,
 .no-js .grid li,
 .no-cssanimations .grid li {
 	opacity: 1;
 }
+
 
 .grid li a,
 .grid li img {

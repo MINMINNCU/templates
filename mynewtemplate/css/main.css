@@ -1,5 +1,4 @@
-body{ 
-}
+
 
 ul{
 	list-style-type:none;
@@ -28,7 +27,6 @@ div.itemAuthorBlock{
 
 #colorbox{
 	z-index: 5;
-	
 }
 #colorbox:focus{
 	outline-width: 0px;
@@ -55,8 +53,7 @@ iframe.cboxIframe{
 	overflow-x:hidden;
 
 }
-#k2Container{
-}
+
 #cboxOverlay{
 	position: fixed;
 	display: block;
@@ -72,19 +69,23 @@ iframe.cboxIframe{
 	opacity: 1;
 }
 /* item */
+.container{
+	width: 47%;
+	float: left;
+}
+.con_uncommon{
+	position: relative;
+	left: 185px;
+}
+
 
 .ditem{
-	position: relative;
 	z-index: 1;
 }
-li.ditem.shown{
 
-	padding: 20px;
-}
 .ditem:hover{
-	/*border: 3px solid rgb(2,202,176);*/
 	background: rgba(255,255,255,0.9);
-	z-index: 2;
+	z-index: 4;
 	min-width:25%;
 	max-width: 50%;
 }
@@ -138,16 +139,19 @@ li.ditem.shown{
 }
 
 
+<<<<<<< HEAD
 /* Main Page Center */
 
+=======
+>>>>>>> c01cb795b13994b153bde9a9d77d58fa879a3942
 /*center*/
 
 #centerBlock{
 	text-align: center;
 	position: fixed;
-	top:10%;
-	left:34%;
-	width:20%;
+	left:40%;
+	width:18%;
+	z-index: 3;
 }
 
 .centerBtn{
@@ -155,16 +159,12 @@ li.ditem.shown{
 	display:block;
 	width:100%;
 	position: relative;
-	top:-100px;
 }
 
 #searchBtn{
-	position: relative;
-	top:100px;
-	width: 80%;
-	left:20px;
 	z-index: 1;
-	
+	width: 80%;
+	position: relative;
 }
 #k2SearchBlock{
 	display: none;
@@ -172,9 +172,7 @@ li.ditem.shown{
 
 #centerPost{
 	position: relative;
-	top:-300px;
 	width:80%;
-	left:20px;
 }
 
 .homeImg>img{
