@@ -69,8 +69,8 @@ defined('_JEXEC') or die;
 
           <div class="numOfComments">
             <span>
-              <!-- <img id="quo" src="/minmin/templates/mynewtemplate/images/quotation.png" align=left height="16" width="16" alt="quotation"/> -->
-              <?php echo "+ ". $size ?>
+              <?php echo $size ?>
+              <img id="quo" src="/minmin/templates/mynewtemplate/images/quotation.png" align="left" height="16" width="16" alt="quotation"/>
             </span> 
           </div>
 
@@ -179,11 +179,10 @@ defined('_JEXEC') or die;
 
           <div class="numOfComments">
             <span>
-              <!-- <img id="quo" src="/minmin/templates/mynewtemplate/images/quotation.png" align=left height="16" width="16" alt="quotation"/> -->
-              <?php echo "+ ". $size ?>
+              <?php echo $size ?>
+              <img id="quo" src="/minmin/templates/mynewtemplate/images/quotation.png" align="left" height="16" width="16" alt="quotation"/>
             </span> 
           </div>
-
           <!-- Item introtext -->
             <div class="introtext sp">
               <?php if($this->item->params->get('itemIntroText')): ?>
