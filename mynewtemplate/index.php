@@ -26,7 +26,6 @@
 		<!-- main -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/custom.js" ></script>
 
-<<<<<<< HEAD
 		<!-- slidingmenu -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>bootstrap/js/bootstrap.js" type="text/javascript"></script>
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/slidingmenu.js"></script>
@@ -34,8 +33,6 @@
 	   	<!-- gridloading -->
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/component.css" type="text/css" />	
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/gridloading/default.css" type="text/css" />	
-=======
->>>>>>> c01cb795b13994b153bde9a9d77d58fa879a3942
 
 		<!-- bower_components -->
 		<script src="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template.'/'; ?>javascripts/bower_components/jquery.js" ></script> 
