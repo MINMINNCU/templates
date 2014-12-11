@@ -106,13 +106,13 @@ if(cookie==""){
 }else if(cookie=="1"){
   // Start the tour!
   $K2(document).ready(function(){
-    $K2('#sm-trigger').toggleClass('active');
-    $K2('#sm-trigger').toggleClass('arrow-close');
-    $K2('#sm-trigger').toggleClass('arrow-open');
-    $K2('#mastwrap').toggleClass('sliding-toright');
-    $K2('#mastwrap').toggleClass('mastwrap-open');
-    $K2('#sm').toggleClass('menu-open');
-    $K2('#mastwrap').addClass('nav-opened');
+    // $K2('#sm-trigger').toggleClass('active');
+    // $K2('#sm-trigger').toggleClass('arrow-close');
+    // $K2('#sm-trigger').toggleClass('arrow-open');
+    // $K2('#mastwrap').toggleClass('sliding-toright');
+    // $K2('#mastwrap').toggleClass('mastwrap-open');
+    // $K2('#sm').toggleClass('menu-open');
+    // $K2('#mastwrap').addClass('nav-opened');
     hopscotch.startTour(tour2);
 
   });
