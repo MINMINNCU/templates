@@ -18,7 +18,7 @@ If you wish to use the live search option, it's important that you maintain the 
 ?>
 
 <div id="k2ModuleBox<?php echo $module->id; ?>" class="k2SearchBlock<?php if($params->get('moduleclass_sfx')) echo ' '.$params->get('moduleclass_sfx'); if($params->get('liveSearch')) echo ' k2LiveSearchBlock'; ?>">
-	<form action="<?php echo $action; ?>" method="get" autocomplete="off" class="k2SearchBlockForm">
+	<form action="<?php echo $action; ?>" method="get" autocomplete="off" class="k2SearchBlockForm" onsubmit="target_popup(this)">
 
 		<input type="text" placeholder="<?php echo $text; ?>" name="searchword" maxlength="<?php echo $maxlength; ?>" size="<?php echo $width; ?>" alt="<?php echo $button_text; ?>" class="inputbox"  autofocus/>
 
@@ -42,6 +42,13 @@ If you wish to use the live search option, it's important that you maintain the 
 		<input type="hidden" name="tpl" value="search" />
 		<?php endif; ?>
 	</form>
+
+	<script type="text/javascript">
+	function target_popup(form) {
+    window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars');
+    form.target = 'formpopup';
+	}
+	</script>
 
 	<?php if($params->get('liveSearch')): ?>
 	<div class="k2LiveSearchResults"></div>
