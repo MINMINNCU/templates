@@ -20,47 +20,13 @@ defined('_JEXEC') or die;
 
 	<div class="k2UserBlockDetails">
 	  <?php if($params->get('userAvatar')): ?>
-	  <div class="avatar">
-	  	<a class="k2Avatar ubAvatar" href="<?php echo JRoute::_(K2HelperRoute::getUserRoute($user->id)); ?>" title="<?php echo JText::_('K2_MY_PAGE'); ?>">
-	  		<?php
-	  				$image = K2HelperUtilities::getAvatar($user->id, $user->email);
-	  			  
-	  			  if($image==JURI::root(true).'/'.'components/com_k2/images/placeholder/user.png')
-	  			  {
-	  			  	 $image = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTORGBSxeeg2pIre8OXi1zMm5t8R2-i7zzFBhRgq53KM-V5wnAP8A";
-	  			  }
-
-	  			  else
-	  			  {
-	  			  	jimport( 'joomla.application.module.helper' );
-                 	$module_fb = JModuleHelper::getModule( 'fbconnct');
-                  	$params_fb = $module_fb->params;
-                  	
-	  			  		  			  	
-	  			  	require_once(JPATH_ROOT.'/modules/mod_fbconnct/helper.php');
-					//$showfacebookimage 	= $params_fb->get('show-facebook-image');
-					$fbdb = JFactory::getDBO();
-					$fbdocument = JFactory::getDocument();
-					$fbquery = "SELECT facebook_userid FROM #__facebook_joomla_connect WHERE joomla_userid=$user->id AND linked=1";
-					$fbdb->setQuery($fbquery);
-					$rows = $fbdb->loadObjectList();
-					$fbuserid = (strlen($rows[0]->facebook_userid)>0)?$rows[0]->facebook_userid:0;
-
-   					$image = "/minmin/templates/mynewtemplate/images/level2.png" ;	
-	  			  }
-	  		?>
-
-	  		<img src="<?php echo $image;?>" alt="<?php echo K2HelperUtilities::cleanHtml($user->name); ?>" style="width:<?php echo $avatarWidth; ?>px;height:auto;" />
-	  	</a>
-
-	  </div>
+	  <a class="k2Avatar ubAvatar" href="<?php echo JRoute::_(K2HelperRoute::getUserRoute($user->id)); ?>" title="<?php echo JText::_('K2_MY_PAGE'); ?>">
+	  	<img src="<?php echo K2HelperUtilities::getAvatar($user->id, $user->email); ?>" alt="<?php echo K2HelperUtilities::cleanHtml($user->name); ?>" style="width:60px;height:auto;" />
+	  </a>
 	  <?php endif; ?>
-	  <div  class="userInfo">
-		<span class="ubName"><?php echo $user->name; ?></span>
-		<span class="ubCommentsCount"><?php echo JText::_('K2_YOU_HAVE'); ?> <b><?php echo $user->numOfComments; ?></b> <?php if($user->numOfComments==1) echo JText::_('K2_PUBLISHED_COMMENT'); else echo JText::_('K2_PUBLISHED_COMMENTS'); ?></span>  
-	  </div>
-	  	
-	  			  	
+	  <span class="ubName"><?php echo $user->name; ?></span>
+		<span class="ubCommentsCount"><?php echo JText::_('K2_YOU_HAVE'); ?> <b><?php echo $user->numOfComments; ?></b> <?php if($user->numOfComments==1) echo JText::_('K2_PUBLISHED_COMMENT'); else echo JText::_('K2_PUBLISHED_COMMENTS'); ?></span>
+	  <div class="clr"></div>
 	</div>
 
 	
