@@ -77,7 +77,12 @@ iframe.cboxIframe{
 	position: relative;
 	left: 185px;
 }
-
+.con_common>.grid>.ditem:hover{
+	background: linear-gradient(to bottom, rgba(204,0,0,0.6) 0%,rgba(204,202,202,0.21) 100%); /* W3C */
+}
+.con_uncommon>.grid>.ditem:hover{
+	background: linear-gradient(to bottom, rgba(64,150,238,0.25) 0%,rgba(237,237,237,1) 100%); /* W3C */
+}
 
 .ditem{
 	z-index: 1;
@@ -97,7 +102,8 @@ iframe.cboxIframe{
 	float: left;
 }
 .comments{
-	margin-left: 20px;
+	font-size: 14px;
+	line-height:14px;
 }
 
 .tagbox{
