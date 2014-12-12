@@ -33,7 +33,7 @@ defined('_JEXEC') or die;
 	<div class="levelImg" style="float: left; margin-right: 15px;">
 
 	  	<?php if($this->item->params->get('itemAuthorImage') && !empty($this->item->author->avatar)): ?>
-	  	<img class="itemAuthorAvatar" src="<?php echo $this->item->author->avatar; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($this->item->author->name); ?>" />
+	  	<img class="itemAuthorAvatar" src="<?php echo $this->item->author->avatar; ?>" alt="<?php echo K2HelperUtilities::cleanHtml($this->item->author->name); ?>" style="width:90px;"/>
 	  	<?php endif; ?>
 
 	</div>
