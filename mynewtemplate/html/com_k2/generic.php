@@ -12,6 +12,20 @@ defined('_JEXEC') or die;
 
 ?>
 
+<script type="text/javascript">
+	var $K2 = jQuery.noConflict();
+	      
+	    $K2( document ).ready(function() {
+	      "use strict";
+	      $K2(window).load(function(){
+	        $K2('#sm').hide('menu-open');
+	      });
+	    });
+
+	    // document.getElementById('#sm').style.display = 'hidden';
+</script>
+
+
 <!-- Start K2 Generic (search/date) Layout -->
 <div id="k2Container" class="genericView<?php if($this->params->get('pageclass_sfx')) echo ' '.$this->params->get('pageclass_sfx'); ?>">
 
@@ -72,7 +86,7 @@ defined('_JEXEC') or die;
 			  <!-- Item Image -->
 			  <div class="genericItemImageBlock">
 				  <span class="genericItemImage">
-				    <a href="<?php echo $item->link; ?>" title="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>">
+				    <a class="modal" href="<?php echo $item->link; ?>" title="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>">
 				    	<img src="<?php echo $item->imageGeneric; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $this->params->get('itemImageGeneric'); ?>px; height:auto;" />
 				    </a>
 				  </span>

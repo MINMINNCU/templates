@@ -45,8 +45,7 @@ If you wish to use the live search option, it's important that you maintain the 
 
 	<script type="text/javascript">
 	function target_popup(form) {
-    window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars');
-    form.target = 'formpopup';
+    	form.target = 'formpopup';
 	}
 	</script>
 
