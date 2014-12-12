@@ -203,3 +203,18 @@
 #item_content,#trans_content{
 	display: none;
 }
+.img_contact{
+	visibility: hidden;
+	width:22px;
+	cursor:pointer;
+}
+.contact{
+	display: none;
+	border: 5px solid rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+.close{
+	float: right;
+	cursor:pointer;
+
+}
