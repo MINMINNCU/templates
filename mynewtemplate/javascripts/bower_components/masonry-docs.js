@@ -3232,7 +3232,7 @@ function masonryDefinition( Outlayer, getSize ) {
     // IE8 triggers resize on body size change, so they might not be
     var size = getSize( container );
     this.containerWidth = size && size.innerWidth;
-    this.containerWidth = this.containerWidth *0.5;
+    this.containerWidth = this.containerWidth;
   };
 
   Masonry.prototype._getItemLayoutPosition = function( item ) {

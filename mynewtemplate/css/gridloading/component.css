@@ -10,10 +10,10 @@
 .grid li {
 	float: left;
 	opacity: 0;
-	padding: 7px;
+	padding: 10px;
 	display: inline-block;
 	margin: 0;
-	width: 40%;
+	width: 50%;
 }
 
 

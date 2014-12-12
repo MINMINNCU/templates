@@ -9,13 +9,13 @@ defined('_JEXEC') or die;
 
 
 <?php $params = K2HelperUtilities::getParams('com_k2'); ?>
-
+<!-- 
 <div id="container" class='container2'>
   <ul class="grid  effect-2" id="grid">
   </ul>
 </div>
-
-<div id="container" class='container'>
+ -->
+<div id="container" class='container con_common'>
   <ul class="grid  effect-2" id="grid">
     <!-- display k2 items -->
     <?php
@@ -131,7 +131,7 @@ defined('_JEXEC') or die;
   </ul>
 </div>
 <div id="container" class='container con_uncommon'>
-  <ul class="grid grid2 effect-2" id="grid">
+  <ul class="grid grid2 effect-2" id="grid2">
     <!-- display k2 items -->
     <?php for($z = $count-1 ; $z >$half_count ; $z--): ?>
       <?php  
@@ -281,6 +281,11 @@ defined('_JEXEC') or die;
 <!-- scroll animate  -->
 <script type="text/javascript">
       new AnimOnScroll( document.getElementById( 'grid' ), {
+              minDuration : 0.4,
+              maxDuration : 0.7,
+              viewportFactor : 0.2
+            } );
+      new AnimOnScroll( document.getElementById( 'grid2' ), {
               minDuration : 0.4,
               maxDuration : 0.7,
               viewportFactor : 0.2

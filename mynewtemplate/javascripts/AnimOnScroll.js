@@ -111,10 +111,10 @@
 					
 					//for center space varieble//
 					// var centerBlockWidth=document.getElementById('centerBlock').offsetWidth;
-					var left= '';
-					var count = 0;
-					var interval = 0;
-					var arr = [];
+					// var left= '';
+					// var count = 0;
+					// var interval = 0;
+					// var arr = [];
 					//for center space//	
 
 					self.items.forEach( function( el, i ) {
