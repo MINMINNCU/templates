@@ -250,7 +250,7 @@ defined('_JEXEC') or die;
       </div>
       <img id='searchBtn' class='centerBtn' src='<?php echo JURI::base(true); ?>/images/search-01.png' alt='search'/>
       <!-- home   -->
-      <img class='centerBtn' src='<?php echo JURI::base(true); ?>/images/DtLogo-01.png' alt='home'/>  
+      <img id='homeBtn' class='centerBtn' src='<?php echo JURI::base(true); ?>/images/DtLogo-01.png' alt='home'/>  
       <!-- post -->
       <?php $user = JFactory::getUser();?>
       <?php if($user->guest):?>

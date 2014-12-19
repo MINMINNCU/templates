@@ -9,18 +9,21 @@ var tour = {
   steps: [
     {
       target: "centerPost",
-      placement: "right",
+      placement: "left",
       title: "找不到你很想要的東西或服務嗎？",
       content: "只要輸入標題、標籤、附上圖片，一分鐘內張貼你的需求",
-      
-      zindex:3,
+      arrowOffset:"center",
+      yOffset:"410",
+
+      zindex:5,
     },
     {
       target: "searchBtn",
+      arrowOffset:"center",
       placement: "right",
       title: "東西賣不掉？閒閒沒事做？",
       content: "快速搜尋有哪些需求你可以滿足？",
-      zindex:3,
+      zindex:5,
       fixedElement:true,
     },
     {
@@ -29,7 +32,7 @@ var tour = {
       title: "首頁",
       content: "按這裡你可以回到首頁",
       yOffset:"center",
-      zindex:3,
+      zindex:5,
       fixedElement:true
     },
     {
@@ -38,7 +41,7 @@ var tour = {
       title: "快來加入我們吧",
       arrowOffset:"center",
       xOffset:"-400",
-      zindex:3,
+      zindex:5,
       fixedElement:true,
       onShow: function() {
         $K2('#sm-trigger').toggleClass('active');
@@ -71,7 +74,6 @@ var tour2 = {
       title: "系統通知",
       content: "當你等級提升，或是需求有新報價、留言時，這裏都可以看到喔！",
       xOffset:"-300",
-      yOffset:"-10",
       zindex:21,
     },
     {
@@ -105,13 +107,13 @@ if(cookie==""){
 }else if(cookie=="1"){
   // Start the tour!
   $K2(document).ready(function(){
-    // $K2('#sm-trigger').toggleClass('active');
-    // $K2('#sm-trigger').toggleClass('arrow-close');
-    // $K2('#sm-trigger').toggleClass('arrow-open');
-    // $K2('#mastwrap').toggleClass('sliding-toright');
-    // $K2('#mastwrap').toggleClass('mastwrap-open');
-    // $K2('#sm').toggleClass('menu-open');
-    // $K2('#mastwrap').addClass('nav-opened');
+    $K2('#sm-trigger').toggleClass('active');
+    $K2('#sm-trigger').toggleClass('arrow-close');
+    $K2('#sm-trigger').toggleClass('arrow-open');
+    $K2('#mastwrap').toggleClass('sliding-toright');
+    $K2('#mastwrap').toggleClass('mastwrap-open');
+    $K2('#sm').toggleClass('menu-open');
+    $K2('#mastwrap').addClass('nav-opened');
     hopscotch.startTour(tour2);
 
   });
