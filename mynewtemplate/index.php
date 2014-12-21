@@ -7,6 +7,9 @@
 		
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/main.css" type="text/css" />
 		
+		<!-- favicon		 -->
+		<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/favicon.ico" type="text/css">
+
     	<!-- Custom Fonts Setup via Font-face CSS3 -->
     	<link rel="stylesheet" href="<?php echo JURI::base(true); ?>/templates/<?php echo $this->template; ?>/fonts/fonts.css" type="text/css">
 

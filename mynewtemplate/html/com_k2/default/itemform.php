@@ -249,6 +249,7 @@ $document->addScriptDeclaration("
 										<?php endforeach; ?>
 									</div>
 									<?php endif; ?>
+
 				<table class="k2FrontendToolbar" cellpadding="2" cellspacing="4">
 				<tr>
 					<td id="toolbar-save" class="button">

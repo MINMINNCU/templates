@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
 <!-- K2 user register form -->
 <?php if(isset($this->message)) $this->display('message'); ?>
 
-<form action="<?php echo JURI::root(true); ?>/index.php" enctype="multipart/form-data" method="post" id="josForm" name="josForm" class="form-validate">
+<form action="<?php echo JURI::root(true); ?>/index.php" enctype="multipart/form-data" method="post" id="josForm" name="josForm">
 	<?php if($this->params->def('show_page_title',1)): ?>
 <div class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 	<?php echo $this->escape($this->params->get('page_title')); ?>
