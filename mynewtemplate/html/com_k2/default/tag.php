@@ -70,9 +70,12 @@ defined('_JEXEC') or die;
 				  		<?php if($item->params->get('tagItemImage',1) && !empty($item->imageGeneric)): ?>
 						    <img src="<?php echo $item->imageGeneric; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $item->params->get('itemImageGeneric'); ?>px; height:auto;" />
 				  		<?php elseif(count($item->extra_fields)):?>
-			                <?php $extra_field = json_decode($item->extra_fields);?>
-						    <img src="<?php echo $extra_field[0]->value; ?>" />
-			 			 <?php endif; ?>
+			                <?php foreach ($item->extra_fields as $key=>$extraField): ?>
+								<?php if($extraField->value != ''): ?>
+						    			<img src="<?php echo $extraField->value; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $item->params->get('itemImageGeneric'); ?>px; height:auto;" />
+								<?php endif; ?>
+							<?php endforeach; ?>
+			 			<?php endif; ?>
 					</a>
 				  </span>
 				  <div class="clr"></div>
@@ -89,38 +92,18 @@ defined('_JEXEC') or die;
 			  <div class="clr"></div>
 		  </div>
 		  
-		  <div class="clr"></div>
-		  
-		  <?php if($item->params->get('tagItemExtraFields',0) && count($item->extra_fields)): ?>
-		  <!-- Item extra fields -->  
-		  <div class="tagItemExtraFields">
-		  	<h4><?php echo JText::_('K2_ADDITIONAL_INFO'); ?></h4>
-		  	<ul>
-				<?php foreach ($item->extra_fields as $key=>$extraField): ?>
-				<?php if($extraField->value != ''): ?>
-				<li class="<?php echo ($key%2) ? "odd" : "even"; ?> type<?php echo ucfirst($extraField->type); ?> group<?php echo $extraField->group; ?>">
-					<?php if($extraField->type == 'header'): ?>
-					<h4 class="tagItemExtraFieldsHeader"><?php echo $extraField->name; ?></h4>
-					<?php else: ?>
-					<span class="tagItemExtraFieldsLabel"><?php echo $extraField->name; ?></span>
-					<span class="tagItemExtraFieldsValue"><?php echo $extraField->value; ?></span>
-					<?php endif; ?>		
-				</li>
-				<?php endif; ?>
-				<?php endforeach; ?>
-				</ul>
-		    <div class="clr"></div>
-		  </div>
-		  <?php endif; ?>
-		  
+		  <div class="clr"></div><!-- 
+
 			<?php if($item->params->get('tagItemCategory')): ?>
+			 -->
 			<!-- Item category name -->
-			<div class="tagItemCategory">
+			<!-- <div class="tagItemCategory">
 				<span><?php echo JText::_('K2_PUBLISHED_IN'); ?></span>
 				<a href="<?php echo $item->category->link; ?>"><?php echo $item->category->name; ?></a>
 			</div>
 			<?php endif; ?>
 			
+ -->
 			<?php if ($item->params->get('tagItemReadMore')): ?>
 			<!-- Item "read more..." link -->
 			<div class="tagItemReadMore">
