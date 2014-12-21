@@ -43,6 +43,23 @@ var $K2 = jQuery.noConflict();
         $K2(document).find('body').toggleClass('underOverlay');
       });
 
+      $K2(window).load(function(){
+        var x=$K2('#centerBlock').css('width');
+        x=x.split("px")[0];
+        var x1=x*0.09;
+        x1=x1+'px';
+        $K2("#searchBtn").css('left',x1);
+        $K2(document).find("#centerPost").css('left',x1);
+
+        var y=$K2('#centerBlock').css('height');
+        y=y.split("px")[0];
+        var y1=y*0.2;
+        y1=y1+'px';
+        $K2(document).find("#searchBtn").css('top',y1);
+        var y2=-(y*0.2);
+        y2=y2+'px';
+        $K2(document).find("#centerPost").css('top',y2);
+      });
       
      
     });
