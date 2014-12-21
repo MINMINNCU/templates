@@ -54,22 +54,8 @@
 
 	</head>
 	<body>
-		
-	
-		<?php if ($this->countModules('sidebar-menu')) : ?>
-		<nav class="sidebarmenu" id="sm">
-			<!--slidingmenu-->
-			<div class="sm-wrap">
-				<jdoc:include type="modules" name="sidebar-menu" style="no" />
-			</div>
-			<!--slidingtrigger-->
-			<div id="sm-trigger" class="arrow-close"></div>		
-		</nav>
-		<?php endif; ?>
-
 		<!-- Master Wrap : starts -->
-		<section id="mastwrap" class="sliding">
-
+		<section >
 			
 			<jdoc:include type="message" />
 			<!-- display demand -->
@@ -81,7 +67,7 @@
 		<jdoc:include type="modules" name="top" /> 
 		<jdoc:include type="modules" name="right"/> 
 
-		<!-- define and start your tour in this file -->
+	<!-- define and start your tour in this file -->
 
 	</body>
 </html>

@@ -62,13 +62,18 @@ defined('_JEXEC') or die;
 		  </div>
 
 		  <div class="tagItemBody">
-			  <?php if($item->params->get('tagItemImage',1) && !empty($item->imageGeneric)): ?>
+			  <?php if(  ($item->params->get('tagItemImage',1) && !empty($item->imageGeneric)) || (count($item->extra_fields) ) ):?>
 			  <!-- Item Image -->
 			  <div class="tagItemImageBlock">
 				  <span class="tagItemImage">
-				    <a href="<?php echo $item->link; ?>" title="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>">
-				    	<img src="<?php echo $item->imageGeneric; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $item->params->get('itemImageGeneric'); ?>px; height:auto;" />
-				    </a>
+					<a href="<?php echo $item->link; ?>" title="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>">
+				  		<?php if($item->params->get('tagItemImage',1) && !empty($item->imageGeneric)): ?>
+						    <img src="<?php echo $item->imageGeneric; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $item->params->get('itemImageGeneric'); ?>px; height:auto;" />
+				  		<?php elseif(count($item->extra_fields)):?>
+			                <?php $extra_field = json_decode($item->extra_fields);?>
+						    <img src="<?php echo $extra_field[0]->value; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $item->params->get('itemImageGeneric'); ?>px; height:auto;" />
+						<?php endif; ?>
+					</a>
 				  </span>
 				  <div class="clr"></div>
 			  </div>
