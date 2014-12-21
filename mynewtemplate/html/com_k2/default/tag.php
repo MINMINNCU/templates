@@ -71,8 +71,8 @@ defined('_JEXEC') or die;
 						    <img src="<?php echo $item->imageGeneric; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $item->params->get('itemImageGeneric'); ?>px; height:auto;" />
 				  		<?php elseif(count($item->extra_fields)):?>
 			                <?php $extra_field = json_decode($item->extra_fields);?>
-						    <img src="<?php echo $extra_field[0]->value; ?>" alt="<?php if(!empty($item->image_caption)) echo K2HelperUtilities::cleanHtml($item->image_caption); else echo K2HelperUtilities::cleanHtml($item->title); ?>" style="width:<?php echo $item->params->get('itemImageGeneric'); ?>px; height:auto;" />
-						<?php endif; ?>
+						    <img src="<?php echo $extra_field[0]->value; ?>" />
+			 			 <?php endif; ?>
 					</a>
 				  </span>
 				  <div class="clr"></div>
